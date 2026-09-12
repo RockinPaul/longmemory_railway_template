@@ -33,7 +33,8 @@ RUN addgroup -g 1001 -S nodejs \
     && adduser -u 1001 -S nextjs -G nodejs \
     && chown -R nextjs:nodejs /app
 USER nextjs
-ENV NODE_ENV=production
+ENV NODE_ENV=production \
+    PORT=8080
 EXPOSE 3000
 # HOSTNAME is deliberately NOT set here. Railway injects it with the container's own hostname at
 # run time, which overrides any ENV baked into the image, and Next.js binds whatever it finds.

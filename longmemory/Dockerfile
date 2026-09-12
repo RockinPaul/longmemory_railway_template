@@ -45,6 +45,7 @@ RUN npm install --omit=dev /tmp/longmemory.tgz && rm /tmp/longmemory.tgz
 # The database lives in a SUBDIRECTORY of the mount: a Railway volume root holds a root-owned
 # lost+found, and the server runs unprivileged.
 ENV NODE_ENV=production \
+    PORT=8080 \
     LONGMEMORY_HOST=:: \
     LONGMEMORY_DB_PATH=/data/db/longmemory.db \
     LONGMEMORY_MCP_HTTP=true \
