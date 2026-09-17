@@ -3,7 +3,7 @@
 # It talks to the server through its own server-side proxy route (app/api/longmemory/[...path]),
 # so the API key is read from LONGMEMORY_API_URL/LONGMEMORY_API_KEY in the Node process and never
 # reaches the browser bundle. Upstream's NEXT_PUBLIC_* variables would expose it; they are not used.
-ARG LM_COMMIT=188a1dec829c69a97e6de6fe359ea0dd98080c10
+ARG LM_COMMIT=4da4986d0069dbaa59d9209a84e2267749a67b3f
 ARG NODE_IMAGE=node:20-alpine
 
 FROM ${NODE_IMAGE} AS build

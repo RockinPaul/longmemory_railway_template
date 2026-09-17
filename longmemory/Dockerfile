@@ -3,7 +3,7 @@
 # Upstream publishes no pullable image (the GHCR package is not public), so this builds from a
 # pinned commit. Releases are not usable as pins: main is 155 commits past the v1.3.0 tag and
 # package.json reports a LOWER version than that tag, so a commit SHA is the only coherent anchor.
-ARG LM_COMMIT=188a1dec829c69a97e6de6fe359ea0dd98080c10
+ARG LM_COMMIT=4da4986d0069dbaa59d9209a84e2267749a67b3f
 ARG NODE_IMAGE=node:22-bookworm-slim
 
 FROM ${NODE_IMAGE} AS build
