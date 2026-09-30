@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-30
+
+- Server build applies `longmemory/patches/` on top of the pinned commit.
+- First patch: project-scoped writes (`longmemory_ingest` with `project_id`,
+  `longmemory_remember_decision`, connector imports) are now embedded. Upstream stored them with no
+  semantic vector, so they never received a vector score in recall
+  ([CaviraOSS/LongMemory#216](https://github.com/CaviraOSS/LongMemory/issues/216), fix in
+  [#217](https://github.com/CaviraOSS/LongMemory/pull/217)).
+
 ## 2026-09-12
 
 Initial template.

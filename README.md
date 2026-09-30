@@ -93,6 +93,10 @@ of silently changing it.
 
 Change `LM_COMMIT` in `longmemory/Dockerfile` and `dashboard/Dockerfile` to the same new SHA.
 
+The server build also applies every file in `longmemory/patches/`, fixes that are not upstream
+yet, and fails if any of them does not apply. When a bump pulls in one of those fixes, delete its
+patch; each file names the upstream PR to watch.
+
 ## Component licenses
 
 The wrapper files here are MIT (see `LICENSE`). LongMemory itself is Apache-2.0.

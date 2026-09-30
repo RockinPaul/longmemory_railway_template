@@ -22,6 +22,10 @@ RUN git init -q src \
          echo "expected ${LM_COMMIT}, got ${actual}" >&2; exit 1; \
        fi
 WORKDIR /workspace/src
+# Fixes not yet upstream, one file each; every patch must apply or the build fails, so a bumped
+# LM_COMMIT that already carries a fix breaks loudly instead of patching twice.
+COPY patches/ /workspace/patches/
+RUN git apply --verbose /workspace/patches/*.patch
 # Same build upstream's own Dockerfile performs: build the workspace, then pack a tarball so the
 # runtime stage installs only production dependencies.
 RUN corepack enable \
